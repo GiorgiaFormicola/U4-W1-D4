@@ -5,14 +5,14 @@ import interfaces.Worker;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        /*Employee employee1 = new Employee(1300.00, Department.PRODUCTION);
+        Employee employee2 = new Employee(10.00, Department.SALES);
+        Employee employee3 = new Employee(1900.00, Department.ADMINISTRATION);*/
 
         FullTimeEmployee employee1 = new FullTimeEmployee(1300.00, Department.PRODUCTION);
         PartTimeEmployee employee2 = new PartTimeEmployee(10.00, Department.SALES);
         Manager employee3 = new Manager(1900.00, Department.ADMINISTRATION);
 
-        Volunteer volunteer1 = new Volunteer("Marco", 30, true);
-        Volunteer volunteer2 = new Volunteer("Giacomo", 44, false);
-        Volunteer volunteer3 = new Volunteer("Stefania", 35, true);
 
         Employee[] employeesList = {employee1, employee2, employee3};
 
@@ -21,6 +21,10 @@ public class Main {
             System.out.println("The annual employee salary is: " + currentEmployee.calculateAnnualSalary() + " euro");
         }
 
+        Volunteer volunteer1 = new Volunteer("Marco", 30, true);
+        Volunteer volunteer2 = new Volunteer("Giacomo", 44, false);
+        Volunteer volunteer3 = new Volunteer("Stefania", 35, true);
+        
         Worker[] workersList = {employee1, employee2, volunteer1, volunteer2, employee3, volunteer3};
 
         for (Worker currentWorker : workersList) {
