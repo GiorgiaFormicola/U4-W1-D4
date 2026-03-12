@@ -1,4 +1,5 @@
 import entities.*;
+import interfaces.Worker;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -9,12 +10,34 @@ public class Main {
         PartTimeEmployee employee2 = new PartTimeEmployee(10.00, Department.SALES);
         Manager employee3 = new Manager(1900.00, Department.ADMINISTRATION);
 
+        Volunteer volunteer1 = new Volunteer("Marco", 30, true);
+        Volunteer volunteer2 = new Volunteer("Giacomo", 44, false);
+        Volunteer volunteer3 = new Volunteer("Stefania", 35, true);
+
         Employee[] employeesList = {employee1, employee2, employee3};
 
         for (Employee currentEmployee : employeesList) {
             System.out.println("Employee serial number: " + currentEmployee.getSerialNumber());
             System.out.println("The annual employee salary is: " + currentEmployee.calculateAnnualSalary() + " euro");
         }
+
+        Worker[] workersList = {employee1, employee2, volunteer1, volunteer2, employee3, volunteer3};
+
+        for (Worker currentWorker : workersList) {
+            currentWorker.checkIn();
+        }
+
+        /*for (Worker currentWorker : workersList) {
+            if (currentWorker instanceof Employee) {
+                Employee currentEmployee = (Employee) currentWorker;
+                System.out.println("Employee serial number: " + currentEmployee.getSerialNumber());
+                System.out.println("The annual employee salary is: " + currentEmployee.calculateAnnualSalary() + " euro");
+                currentEmployee.checkIn();
+            } else {
+                currentWorker.checkIn();
+            }
+        }*/
+
 
     }
 }

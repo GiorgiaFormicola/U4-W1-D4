@@ -1,6 +1,8 @@
 package entities;
 
-public abstract class Employee {
+import interfaces.Worker;
+
+public abstract class Employee implements Worker {
     //ATTRIBUTES LIST
     private static int employeeAmount;
 
@@ -35,5 +37,10 @@ public abstract class Employee {
     //SETTERS LIST
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    @Override
+    public void checkIn() {
+        System.out.println("The employee number " + this.serialNumber + " has started his work shift");
     }
 }
